@@ -5,7 +5,7 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-##library - bluetooth_print
+## library - bluetooth_print
 
 A few resources to get you started if this is your first Flutter project:
 
