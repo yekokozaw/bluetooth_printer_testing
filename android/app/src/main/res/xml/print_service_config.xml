@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<print-service xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Specifies that this print service supports 80mm paper width -->
+    <features>
+        <default-paper-size android:height="105mm" android:width="58mm" />
+        <color android:enabled="false" />
+        <duplex android:enabled="false" />
+    </features>
+</print-service>

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:printer_testing/print_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
-    {'title': 'Indian Milk', 'price': 15, 'qty': 2},
+    {'title': 'Indian နို့', 'price': 15, 'qty': 2},
     {'title': 'Parle Biscut', 'price': 5, 'qty': 5},
     {'title': 'Fresh Onion', 'price': 20, 'qty': 1},
     {'title': 'Fresh Lime', 'price': 20, 'qty': 5},
@@ -12,6 +11,8 @@ class HomePage extends StatelessWidget {
   ];
 
   final f = NumberFormat("\$###,###.00", "en_US");
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                 return ListTile(
                   title: Text(
                     data[i]['title'].toString(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -56,42 +57,40 @@ class HomePage extends StatelessWidget {
             children: [
               OutlinedButton(
                   onPressed: (){
-                    
+
                   },
-                  child: Text('Direct Print')
+                  child: const Text('Direct Print')
               )
             ],
           ),
           Container(
             color: Colors.grey[200],
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               children: [
                 Text(
                   "Total: ${f.format(_total)}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 80,
                 ),
-                Expanded(
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => PrintPage(data),
-                        ),
-                      );
-                    },
-                    icon: Icon(Icons.print),
-                    label: Text('Print'),
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.white, backgroundColor: Colors.green),
-                  ),
-                ),
+                // TextButton.icon(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (_) => Printe,
+                //       ),
+                //     );
+                //   },
+                //   icon: const Icon(Icons.print),
+                //   label: const Text('Print'),
+                //   style: TextButton.styleFrom(
+                //       foregroundColor: Colors.white, backgroundColor: Colors.green),
+                // ),
               ],
             ),
           )
